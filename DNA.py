@@ -51,7 +51,3 @@ class DNA:
             prob = uniform(0,100)
             if prob < mutationRate:
                 self.genes[i] = int(not(self.genes[i]))
-                #print("entrou")
-
-dna = DNA(4)
-dna.calcFitness()

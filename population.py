@@ -28,7 +28,6 @@ class Population:
             nextGeneration.append(child1)
             nextGeneration.append(child2)
             self.populationCopy = deepcopy(self.population)
-
         self.population = nextGeneration
         self.generation += 1
 
@@ -48,5 +47,3 @@ class Population:
             if(self.population[i].fitness < mini.fitness):
                 mini = self.population[i]
         return mini.convert()
-
-
