@@ -1,6 +1,7 @@
 from random import randint
 from random import uniform
 from copy import deepcopy
+
 class DNA:
     def __init__(self, tam):
         self.genes = []
@@ -34,7 +35,7 @@ class DNA:
             midpoint = randint(0, tam)
             for i in range(tam):
                 i = i - 1
-                if i < midpoint:
+                if i <= midpoint:
                     child1.genes[i] = self.genes[i]
                     child2.genes[i] = partner.genes[i]
                 else:
@@ -50,6 +51,7 @@ class DNA:
             prob = uniform(0,100)
             if prob < mutationRate:
                 self.genes[i] = int(not(self.genes[i]))
+                #print("entrou")
 
 dna = DNA(4)
 dna.calcFitness()

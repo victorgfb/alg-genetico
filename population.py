@@ -16,9 +16,10 @@ class Population:
 
     def generate(self):
         nextGeneration = []
+        partner1 = self.tornament()
+        partner2 = self.tornament()
+        
         for _ in range(int(self.qtd/2)):
-            partner1 = self.tornament()
-            partner2 = self.tornament()
             child1, child2 = partner1.crossover(partner2, self.crossorverRate)
             child1.mutate(self.mutationRate)
             child2.mutate(self.mutationRate)
